@@ -1,0 +1,210 @@
+/*
+Variables
+*/
+:root {
+/* colors used for backgrounds and fonts*/
+  --clr-grey-1: hsl(60, 20%, 99%);
+  --clr-grey-2: rgb(255, 255, 255);
+  --clr-grey-3: rgb(243, 235, 235);
+  --clr-pink-1: #f9dddc;
+  --clr-pink-2: #f0cac8;
+  --clr-grey-font-1: hsl(206, 10%, 14%);
+  --clr-price-font: hsl(0, 70%, 58%);
+  --clr-title-font: hsl(0, 5%, 8%);
+
+/* Card shadows */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*
+Global Styles
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--clr-grey-font-1);
+  line-height: 1.5;
+}
+
+/*
+App Styles
+*/
+.productSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f7f7;
+  opacity: 1;
+  background-image:  radial-gradient(#d1d6f1 2px, transparent 2px), radial-gradient(#d1d6f1 2px, #f9f7f7 2px);
+  background-size: 80px 80px;
+  background-position: 0 0,40px 40px;
+}
+
+.productCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+  width: 60%;
+  box-shadow: var(--dark-shadow);
+  background-color: var(--clr-grey-2);
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.descriptionCard{
+  margin: 5px 5px;
+}
+
+img{
+  margin: auto;
+  width: 85%;
+}
+
+.titleHeader{
+  font-size: 6rem;
+  font-weight: lighter;
+  color: #e6aba6;
+  font-family: 'Spectral SC', serif;
+  margin: 0;
+  line-height: 1;
+}
+
+.subTitleHeader{
+  font-size: 4rem;
+  font-weight: lighter;
+  color: #282828;
+  font-family: 'Dancing Script', cursive;
+  margin: 0px;
+  line-height: 1;
+}
+
+.productInfo{
+  width: 60%;
+}
+
+.productInfo h1{
+  font-size: 2.3rem;
+  font-weight: normal;
+  color: var(--clr-title-font);
+}
+
+.productInfo h2:nth-child(2)
+{
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.productInfo h2:nth-child(3){
+  color: var(--clr-price-font);
+  font-weight: normal;
+}
+
+.productInfo button{
+  float: right;
+  background-color: var(--clr-pink-1);
+  color: var(--clr-grey-font-2);
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 20px;
+  border: 1px solid var(--clr-pink-2);
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.productInfo button:hover{
+  background-color: var(--clr-pink-2);
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.RiArrowLeftSLine,
+.RiArrowRightSLine{ 
+  background-color: var(--clr-pink-1);
+  color: var( --clr-grey-font-1);
+  font-size: 32px;
+  border-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s linear;
+}
+
+.RiArrowLeftSLine:hover,
+.RiArrowRightSLine:hover{
+  background-color: var(--clr-pink-2);
+}
+
+.prevBtn,
+.nextBtn{
+  background-color: transparent;
+  border: none;
+}
+.prevBtn{
+  margin-right: 220px;
+  margin-left: 130px;
+}
+
+
+@media (max-width: 1366px) {
+  .productCard{
+    width: 73%;
+  }
+
+  .prevBtn{
+    margin-left: 120px;
+  }
+}
+
+/* Footer Style */
+.footerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerContainer h3{
+  color: rgb(17, 15, 56) ;
+}
+
+.footerContainer h1{
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  color: rgb(4, 12, 56);
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(204, 154, 154), rgb(42, 42, 122) 50%, rgb(17, 15, 56) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; 
+}
+
+.textMyName:hover {
+  background-position: 0 100%;
+}
